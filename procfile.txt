@@ -1,1 +1,2 @@
+web: gunicorn komparchas.wsgi
 web: gunicorn api:app
