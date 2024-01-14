@@ -11,7 +11,6 @@ CORS(app, support_credentials=True)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/add-task/', methods=['POST'])
-@cross_origin()
 def add_task():
         json_response = request.get_json()
         add_task(json_response["user_id"], json_response["task_content"])
@@ -19,7 +18,6 @@ def add_task():
 
 
 @app.route('/register/', methods=['POST'])
-@cross_origin()
 def register():
         json_response = request.get_json()
         print(json_response)
@@ -31,7 +29,6 @@ def register():
 
 
 @app.route('/login/', methods=['POST'])
-@cross_origin()
 def login():
         json_response = request.get_json()
         is_correct = check_login(json_response["username"], json_response["password"])
