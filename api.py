@@ -28,7 +28,7 @@ def register():
                 return json_response, 401
 
 
-@app.route('/login/', methods=['POST'])
+@app.route('/login/', methods=['POST', 'OPTIONS'])
 def login():
         json_response = request.get_json()
         is_correct = check_login(json_response["username"], json_response["password"])
